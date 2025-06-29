@@ -57,18 +57,38 @@
   }
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+
   </style>
 </head>
 <body class="bg-black text-white font-sans">
   <!-- Header -->
   <header class="bg-gray-900 p-6 sticky top-0 z-10 shadow-lg">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold">Fantasy League HQ</h1>
-      <nav class="space-x-6">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Left side: Title -->
+    <h1 class="text-2xl font-bold text-white">Fantasy League HQ</h1>
+
+    <!-- Right side: Nav + Countdown -->
+    <nav class="flex items-center space-x-6">
         <a href="#standings" class="text-green-400 hover:text-green-300 transition">Standings</a>
         <a href="#matchups" class="text-green-400 hover:text-green-300 transition">Matchups</a>
         <a href="#fun" class="text-green-400 hover:text-green-300 transition">Fun Zone</a>
       <a href="past-winners.html" class="text-green-400 hover:text-green-300 transition">Winners</a>
+       <div id="countdown"
+  class="px-3 py-0.5 text-white font-semibold rounded-full text-xs tracking-wide shadow-inner border border-gray-600 bg-gradient-to-r from-gray-800 to-gray-700 font-mono w-40 min-w-40 text-center blink">
+  Loading
+</div>
+
+
+
+
       </nav>
     </div>
   </header>
@@ -207,6 +227,53 @@
     }
   });
 </script>
+
+
+
+
+<script>
+  const countdownEl = document.getElementById("countdown");
+  const draftDate = new Date("2025-08-25T20:00:00").getTime();
+
+  let loadingDots = 0;
+  const loadingInterval = setInterval(() => {
+    if (countdownEl.textContent.startsWith("Loading")) {
+      loadingDots = (loadingDots + 1) % 4;
+      countdownEl.textContent = "Loading" + ".".repeat(loadingDots);
+    }
+  }, 400);
+
+  // Delay countdown for 5 seconds
+  setTimeout(() => {
+    clearInterval(loadingInterval);
+
+    // Stop the blinking
+    countdownEl.classList.remove("blink");
+
+    // Start live countdown updates
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const gap = draftDate - now;
+
+      if (gap < 0) {
+        countdownEl.textContent = "Draft Time!";
+        return;
+      }
+
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }, 5000);
+</script>
+
+
 
 </body>
 </html>
