@@ -108,46 +108,172 @@
   </div>
 
   <!-- Standings Placeholder -->
-  <section id="standings" class="max-w-4xl mx-auto py-16 px-4">
-    <h3 class="text-4xl font-bold mb-6">Standings</h3>
-    <div class="overflow-x-auto">
-  <table class="min-w-full text-sm text-left text-gray-400">
-    <thead class="text-xs uppercase bg-gray-700 text-gray-300">
-      <tr>
-        <th scope="col" class="px-6 py-3">Team</th>
-        <th scope="col" class="px-6 py-3">W</th>
-        <th scope="col" class="px-6 py-3">L</th>
-        <th scope="col" class="px-6 py-3">PF</th>
-        <th scope="col" class="px-6 py-3">PA</th>
-      </tr>
-    </thead>
-    <tbody class="bg-gray-800">
-      <tr class="border-b border-gray-700">
-        <td class="px-6 py-4">Team Alpha</td>
-        <td class="px-6 py-4">4</td>
-        <td class="px-6 py-4">1</td>
-        <td class="px-6 py-4">600</td>
-        <td class="px-6 py-4">540</td>
-      </tr>
-      <tr class="border-b border-gray-700">
-        <td class="px-6 py-4">Team Bravo</td>
-        <td class="px-6 py-4">3</td>
-        <td class="px-6 py-4">2</td>
-        <td class="px-6 py-4">580</td>
-        <td class="px-6 py-4">510</td>
-      </tr>
-      <tr>
-        <td class="px-6 py-4">Team Charlie</td>
-        <td class="px-6 py-4">2</td>
-        <td class="px-6 py-4">3</td>
-        <td class="px-6 py-4">505</td>
-        <td class="px-6 py-4">540</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <section id="standings" class="max-w-6xl mx-auto py-16 px-4 relative z-0">
+  <h3 class="text-4xl font-bold mb-6">Standings</h3>
+    <table class="min-w-full text-sm text-left text-gray-400">
+     <thead class="text-xs uppercase bg-gray-700 text-green-300 sticky top-[96px] z-10 shadow-md">
+        <tr>
+          <th class="px-4 py-3">Team</th>
+          <th class="px-4 py-3">W</th>
+          <th class="px-4 py-3">L</th>
+          <th class="px-4 py-3">PF</th>
+          <th class="px-4 py-3">PA</th>
+        </tr>
+      </thead>
+      <tbody class="bg-gray-800 divide-y divide-gray-700">
+        <!-- 12 Placeholder Rows -->
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 1</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
 
-  </section>
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+
+
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 2</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+
+       <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 3</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 4</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+       <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 5</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+       <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 6</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 7</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+       <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 8</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+       <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 9</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 10</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 11</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+        <tr class="hover:bg-gray-700 transition group relative">
+  <td class="px-4 py-3">Team 12</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+  <td class="px-4 py-3">–</td>
+
+  <!-- Tooltip Box -->
+  <td class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-[-2.5rem] bg-gray-900 text-sm text-gray-300 p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 w-60 text-center">
+    Division: East | Streak: W2 | Last Game: Won by 3pts
+  </td>
+</tr>
+      </tbody>
+    </table>
+</section>
+
 
   <!-- Matchups Section with Scrollable Cards -->
   <section id="matchups" class="max-w-7xl mx-auto py-16 px-4">
