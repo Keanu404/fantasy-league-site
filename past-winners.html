@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hall of Champions</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #000000, #1f2937);
+      color: white;
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    .champion-card {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .champion-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.1) 40%,
+        transparent 60%,
+        transparent
+      );
+      transform: rotate(25deg);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) rotate(25deg);
+      }
+      100% {
+        transform: translateX(100%) rotate(25deg);
+      }
+    }
+
+    .champion-card:hover {
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .champion-card:hover .content {
+      transform: scale(1.03);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      transition: transform 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-green-400">Hall of Champions</h1>
+    <p class="text-gray-300 mt-2">Celebrating greatness, one season at a time</p>
+    <p class="mt-4">
+  <a href="index.html" class="text-green-400 hover:text-green-300 text-sm underline transition">
+    ← Back to Home
+  </a>
+</p>
+  </header>
+
+  <div class="champion-card" id="card">
+    <div class="content">
+      <h2 class="text-3xl font-semibold text-white mb-2">2024 Champion</h2>
+      <p class="text-xl text-green-400 font-bold">Ally 🏆</p>
+      <p class="text-gray-400 mt-2">An unstoppable season. Dominated the league and claimed the crown.</p>
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 5;
+      const rotateY = ((x - centerX) / centerX) * -5;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  </script>
+</body>
+</html>
