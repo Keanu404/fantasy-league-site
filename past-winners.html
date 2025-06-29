@@ -17,7 +17,10 @@
       background: linear-gradient(135deg, #111827, #1f2937);
       border-radius: 1rem;
       padding: 2rem;
-      max-width: 400px;
+      width: 100%;
+      max-width: 320px;
+      flex-shrink: 0;
+      min-height: 320px;
       margin: auto;
       position: relative;
       overflow: hidden;
@@ -66,11 +69,59 @@
       z-index: 2;
       transition: transform 0.2s ease;
     }
+
+    .champion-card {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.champion-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.1) 40%,
+    transparent 60%,
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shimmer 3s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+.champion-card:hover {
+  box-shadow: 0 25px 35px rgba(0, 255, 128, 0.4);
+}
+
+
+
   </style>
 </head>
 <body>
   <header class="text-center mb-12">
-    <h1 class="text-5xl font-bold text-green-400">Hall of Champions</h1>
+    <h1 class="text-5xl font-bold text-green-400 hover:text-green-300 transition duration-300">Hall of Champions</h1>
     <p class="text-gray-300 mt-2 mb-6">Celebrating greatness, one season at a time</p>
     <div class="text-center mb-8">
   <a href="index.html" class="inline-block px-6 py-2 bg-green-500 text-black font-semibold rounded-full shadow-lg hover:bg-green-400 transition">
@@ -79,13 +130,47 @@
 </div>
   </header>
 
-  <div class="champion-card" id="card">
-    <div class="content">
-      <h2 class="text-3xl font-semibold text-white mb-2">2024 Champion</h2>
-      <p class="text-xl text-green-400 font-bold">Ally 🏆</p>
-      <p class="text-gray-400 mt-2">An unstoppable season. Dominated the league and claimed the crown.</p>
-    </div>
+  <div class="flex flex-col md:flex-row justify-center items-start gap-8 max-w-6xl mx-auto px-4">
+
+ <div class="champion-card w-full" id="card">
+  <div class="content text-center">
+    <span class="bg-green-600 text-black px-3 py-1 rounded-full text-sm font-bold inline-block mb-2 shadow-lg">
+      2024
+    </span>
+
+    <h2 class="text-3xl font-semibold text-white mb-1">
+      Ally <span class="inline-block animate-pulse">🏆</span>
+    </h2>
+
+    <p class="text-green-400 font-bold text-xl mb-2">Record: 11–3</p>
+    <p class="text-sm text-gray-300 italic mb-4">MVP: Christian McCaffrey</p>
+
+    <blockquote class="text-gray-400 bg-gray-800 bg-opacity-60 p-4 rounded-lg">
+      “Did you even draft?”
+    </blockquote>
   </div>
+</div>
+
+<div class="champion-card w-full" id="card">
+  <div class="content text-center">
+    <span class="bg-green-600 text-black px-3 py-1 rounded-full text-sm font-bold inline-block mb-2 shadow-lg">
+      2024
+    </span>
+
+    <h2 class="text-3xl font-semibold text-white mb-2">
+      The Future Champion<span class="inline-block animate-pulse">🏆</span>
+    </h2>
+
+    <p class="text-green-400 font-bold text-xl mb-2">Record: TBD</p>
+    <p class="text-sm text-gray-300 italic mb-4">MVP: Who Will It be?</p>
+
+    <blockquote class="text-gray-400 bg-gray-800 bg-opacity-60 p-4 rounded-lg">
+      "Destiny awaits..."
+    </blockquote>
+  </div>
+</div>
+
+</div>
 
   <script>
     const card = document.getElementById('card');
